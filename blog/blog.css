@@ -1,0 +1,288 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 0 50px;
+  background-color: #0d0d0d;
+}
+
+/* Logo styles */
+.logo {
+  color: #f0c93d;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #898989;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+}
+
+/* Navigation styles */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #3c3c3c;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative; /* Needed for pseudo-element */
+  transition: color 0.3s ease, text-decoration-color 0.3s ease; /* Add transition */
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust position below the text */
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #f0c93d;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom right; /* Start animation from the right */
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none; /* Remove default underline */
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left; /* End animation to the left */
+}
+
+/* GitHub icon styles */
+.github svg {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  color: #ffffff;
+}
+
+.github a:hover svg {
+  box-shadow: 0 0 15px #f0c93d; /* Shadow effect on hover */
+  border: 0 solid #ffffff;
+}
+
+#blog {
+  padding: 50px;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.blog-content {
+  flex: 2;
+}
+
+.blog-sidebar {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.blog-post {
+  background-color: #2d2d2d;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  transition: background-color 0.3s ease;
+}
+
+.blog-post .text-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.blog-post .post-date {
+  color: #f0c93d;
+  margin-bottom: 10px;
+}
+
+.blog-post h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.blog-post p {
+  color: #ccc;
+  flex: 1;
+}
+
+.blog-post img {
+  width: 15%;
+  border-radius: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.blog-post:hover {
+  background-color: #444; /* Warna latar belakang berubah saat hover */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Tambahkan efek bayangan saat hover */
+}
+
+.blog-sidebar h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.blog-sidebar .topics {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blog-sidebar .topics span {
+  background-color: #f0c93d;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#blog h2 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.modal-content,
+.close {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Untuk scrollbar track */
+::-webkit-scrollbar {
+  width: 10px; /* lebar scrollbar */
+}
+
+/* Warna pada scrollbar */
+::-webkit-scrollbar-track {
+  background: #0d0d0d; /* warna latar belakang track */
+}
+
+/* Untuk scrollbar handle (thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: #f0c93d; /* warna handle */
+  border-radius: 5px; /* bentuk handle */
+  border: 2px solid #0d0d0d; /* garis tepi handle */
+}
+
+/* Hover pada scrollbar handle */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f0c93d; /* warna hover handle */
+}
+
+/* Bagian dari scrollbar yang tidak terlihat */
+::-webkit-scrollbar-track-piece {
+  background-color: #0d0d0d; /* warna untuk bagian yang tidak terlihat */
+}
+
+/* Bagian dari scrollbar handle (thumb) yang tidak terlihat */
+::-webkit-scrollbar-thumb-piece {
+  background-color: #f0c93d; /* warna untuk bagian handle yang tidak terlihat */
+}
+/* Responsive Design for smaller screens */
+@media (max-width: 767px) {
+  header {
+    flex-direction: row;
+    align-items: start;
+    padding: 20px;
+  }
+
+  #blog {
+    flex-direction: column;
+  }
+
+  .blog-sidebar {
+    order: -1;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .blog-post {
+    flex-direction: row;
+  }
+
+  .blog-post img {
+    width: 50%;
+    margin-left: 10px;
+  }
+
+  .blog-post p {
+    display: none;
+  }
+
+  .blog-post .text-content > *:not(.post-date):not(h3) {
+    display: none;
+  }
+}

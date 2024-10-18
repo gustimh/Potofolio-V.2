@@ -1,0 +1,275 @@
+/* Reset default margin and font */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 0 50px;
+  background-color: #0d0d0d;
+}
+
+/* Logo styles */
+.logo {
+  color: #f0c93d;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #898989;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+}
+
+/* Navigation styles */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #3c3c3c;
+  text-decoration: none;
+  font-size: 14px;
+  position: sticky; /* Needed for pseudo-element */
+  transition: color 0.3s ease, text-decoration-color 0.3s ease; /* Add transition */
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust position below the text */
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #f0c93d;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom right; /* Start animation from the right */
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none; /* Remove default underline */
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left; /* End animation to the left */
+}
+
+/* GitHub icon styles */
+.github svg {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  color: #ffffff;
+}
+
+.github a:hover svg {
+  box-shadow: 0 0 15px #f0c93d; /* Shadow effect on hover */
+  border: 0 solid #ffffff;
+}
+
+/* Home section styles */
+.home-section {
+  display: flex;
+  flex-direction: column; /* Adjusted for mobile */
+  justify-content: center;
+  align-items: center;
+  height: calc(90vh - 50px);
+  margin-top: 0px 0;
+  text-align: center; /* Adjusted text alignment */
+}
+
+/* Intro section styles */
+.intro p {
+  margin: 10px 0;
+  animation: slideInLeft 1s ease-out;
+  -webkit-animation: slideInLeft 1s ease-out;
+}
+
+.intro h1 {
+  font-size: 36px;
+  margin: 10px 0;
+  animation: slideInLeft 1s ease-out;
+  -webkit-animation: slideInLeft 1s ease-out;
+}
+
+.intro .text {
+  font-size: 20px;
+  margin: 10px 0;
+  animation: slideInLeft 1s ease-out;
+  -webkit-animation: slideInLeft 1s ease-out;
+}
+
+.intro .typing {
+  color: #f0c93d;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Profile picture styles */
+.profile-picture {
+  margin-top: 20px;
+  transform-origin: bottom right; /* Start animation from the right */
+  animation: slideInLeft 1s ease-out;
+  -webkit-animation: slideInLeft 1s ease-out;
+}
+
+.profile-picture img {
+  border-radius: 100%;
+  box-shadow: 0 0 5px #f0c93def;
+  border: 5px solid #f0c93d;
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.social-media-icons {
+  display: flex;
+  justify-content: center; /* Align icons horizontally */
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+.social-media-icons a {
+  margin: 0 10px; /* Adjust spacing between icons */
+}
+
+.social-media-icons svg {
+  width: 30px; /* Adjust size of icons */
+  height: 30px; /* Adjust size of icons */
+  fill: #757575; /* Color of icons */
+}
+
+.social-media-icons a:hover svg {
+  fill: #ffffff; /* Color of icons on hover */
+}
+
+nav ul li a.active {
+  font-weight: bold; /* Atur gaya sesuai keinginan Anda */
+  color: #f0c93d; /* Warna teks yang sesuai */
+  /* Atur efek lain seperti underline atau background color jika diinginkan */
+}
+
+/* Media Queries for Tablets and Above */
+@media (min-width: 414px) {
+  header {
+    padding: 10px 50px;
+  }
+  nav ul li a {
+    font-size: 18px; /* Adjust font size for larger screens */
+  }
+
+  .home-section {
+    flex-direction: row;
+    text-align: start;
+  }
+
+  .intro h1 {
+    font-size: 48px;
+  }
+
+  .profile-picture {
+    margin-left: 10%;
+    margin-top: 0;
+  }
+
+  .profile-picture img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
+/* Media Queries for Small Mobile Screens */
+@media (max-width: 413px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .home-section {
+    height: 100vh;
+  }
+
+  .intro h1 {
+    font-size: 32px;
+  }
+
+  .intro .text {
+    font-size: 18px;
+  }
+
+  .profile-picture {
+    margin-top: 20px;
+  }
+
+  .profile-picture img {
+    width: 120px;
+    height: 120px;
+  }
+}

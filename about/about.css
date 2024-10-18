@@ -1,0 +1,362 @@
+/* Reset default margin and font */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 0 50px;
+  background-color: #0d0d0d;
+}
+
+/* Logo styles */
+.logo {
+  color: #f0c93d;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #898989;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+}
+
+/* Navigation styles */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #3c3c3c;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative; /* Needed for pseudo-element */
+  transition: color 0.3s ease, text-decoration-color 0.3s ease; /* Add transition */
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust position below the text */
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #f0c93d;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom right; /* Start animation from the right */
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none; /* Remove default underline */
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left; /* End animation to the left */
+}
+
+/* GitHub icon styles */
+.github svg {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  color: #ffffff;
+}
+
+.github a:hover svg {
+  box-shadow: 0 0 15px #f0c93d; /* Shadow effect on hover */
+  border: 0 solid #ffffff;
+}
+
+/* About Me section */
+.about-me {
+  background-color: #202020;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.about-me h1 {
+  font-size: 2em;
+  border-bottom: 2px solid #ffc107;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*content img*/
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  filter: grayscale(100%);
+  /* Animasi untuk masuk dari sisi kiri */
+  animation: slideInLeft 1s ease-out;
+  -webkit-animation: slideInLeft 1s ease-out; /* Untuk browser WebKit seperti Chrome dan Safari */
+  transition: box-shadow 0.3s ease; /* Transisi untuk efek bayangan */
+  animation: pulsate 1s infinite; /* Animasi pulsate */
+}
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 10px #f0c93d;
+  }
+  50% {
+    box-shadow: 0 0 15px #f0c93d;
+  }
+  100% {
+    box-shadow: 0 0 10px #f0c93d;
+  }
+}
+
+.profile-pic:hover {
+  box-shadow: 0 0 15px #000000; /* Shadow effect on hover */
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*content teks isi*/
+.profile-text {
+  text-align: left;
+}
+
+.profile-text p {
+  margin: 10px 0;
+  animation: slideInRight 1s ease-out;
+}
+
+/*content Skills section */
+.skills {
+  background-color: #202020;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.skills h1 {
+  font-size: 2em;
+  border-bottom: 2px solid #ffc107;
+  display: inline-block;
+  padding-bottom: 5px;
+  animation: slideInUp 1s ease-out;
+  -webkit-animation: slideInUp 1s ease-out;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  animation: slideInUp 1s ease-out;
+  -webkit-animation: slideInUp 1s ease-out;
+}
+
+.tab-button {
+  background-color: #2d2d2d;
+  font-size: 15px;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.tab-button.active,
+.tab-button:hover {
+  background-color: #f0c93d;
+  color: #0d0d0d;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  animation: slideInUp 1s ease-out;
+  -webkit-animation: slideInUp 1s ease-out;
+}
+
+.skill-card {
+  background-color: #2d2d2d;
+  border: 1px solid #f0c93d;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px;
+  text-align: center;
+  width: 140px; /* Adjusted width for card */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card p:nth-child(3) {
+  position: absolute;
+  bottom: -30px; /* Adjusted position to show text */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease, bottom 0.3s ease;
+}
+
+.skill-card:hover p:nth-child(3),
+.skill-card:focus-within p:nth-child(3) {
+  transform: translateY(0);
+  bottom: 0;
+}
+
+.skill-card p:nth-child(2) {
+  margin-bottom: 5px;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.skill-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Untuk scrollbar track */
+::-webkit-scrollbar {
+  width: 10px; /* lebar scrollbar */
+}
+
+/* Warna pada scrollbar */
+::-webkit-scrollbar-track {
+  background: #0d0d0d; /* warna latar belakang track */
+}
+
+/* Untuk scrollbar handle (thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: #f0c93d; /* warna handle */
+  border-radius: 5px; /* bentuk handle */
+  border: 2px solid #0d0d0d; /* garis tepi handle */
+}
+
+/* Hover pada scrollbar handle */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f0c93d; /* warna hover handle */
+}
+
+/* Bagian dari scrollbar yang tidak terlihat */
+::-webkit-scrollbar-track-piece {
+  background-color: #0d0d0d; /* warna untuk bagian yang tidak terlihat */
+}
+
+/* Bagian dari scrollbar handle (thumb) yang tidak terlihat */
+::-webkit-scrollbar-thumb-piece {
+  background-color: #f0c93d; /* warna untuk bagian handle yang tidak terlihat */
+}
+
+nav ul li a.active {
+  font-weight: bold; /* Atur gaya sesuai keinginan Anda */
+  color: #f0c93d; /* Warna teks yang sesuai */
+  /* Atur efek lain seperti underline atau background color jika diinginkan */
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+  header {
+    flex-direction: row;
+    align-items: start;
+    padding: 20px;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-text {
+    text-align: center;
+  }
+}
